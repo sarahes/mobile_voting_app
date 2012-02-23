@@ -10,6 +10,7 @@
 	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
 	<script>
 		$(document).ready(function() {
+			var alreadyVoted = false;
 			$('#reg').tap(function(e) {		
 				e.preventDefault();
 			
@@ -19,7 +20,20 @@
 				},
 				function(data) {
 						if(data.voterId){						
-							$.mobile.changePage($("#vote"));						
+							if(!data.alreadyVoted)
+							{						
+								$.mobile.changePage($("#vote"));	
+							}
+							else
+							{
+								alreadyVoted = true;
+								$.mobile.changePage($("#results"));	
+								
+							}
+						}
+						else
+						{
+							alert("Your id isn't valid motha's");					
 						}
 				}, "json");
 				

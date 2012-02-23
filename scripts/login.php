@@ -3,6 +3,8 @@
 	
 	$voterId = $_POST["voterId"];
 	$name = $_POST["name"];
+	$alreadyVoted = false;
+	
 	include_once("../config/db.php");	
 	
 	//validate that voterId is a number between 1001 and 1049
@@ -18,8 +20,8 @@
 		//if the voterId already exists
 		if($q->rowCount() > 0)
 		{
-			//the user already voted, send them to the results page
-			header("Location: ../results.php?alreadyVoted=true");
+			//the user already voted, send them to the results page			
+			$alreadyVoted = true;
 		}
 		//voterId does not exist in db, this is a new voter
 		else
@@ -28,16 +30,15 @@
 			$stmt = $conn->prepare("insert into voters values (:voterId, :name, '')");
 			$stmt->bindValue(':voterId', $voterId);
 			$stmt->bindValue(':name', $name);
-			$stmt->execute(); 
-			
-			//the user was successfully inserted into voters table, forward to next page
-			header("Location: ../vote.php?voterId=$voterId");
+			$stmt->execute(); 	
+
 		}
 	}
 	else 
 	{	
 		$_SESSION['logged'] = false;
-		header("Location: ../index.php?voterId=invalid");
+		$voterId = false;	
 	}
+	echo json_encode(array('voterId' => $voterId, 'name' => $name, 'alreadyVoted' => $alreadyVoted));
 
 ?>

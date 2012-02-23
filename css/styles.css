@@ -1,0 +1,23 @@
+.clear{clear:both;}
+ 
+.candidate{
+	float: left;
+	width: 75px;
+	margin-right: 20px;
+}
+
+.bar{
+	width: 300px;	
+	text-align: center;	
+	float: left;
+	display: inline-block;
+}
+
+.graph {	
+	background: green;	
+	color: #fff;	
+	text-indent: -1000px;
+}
+ 
+
+ 

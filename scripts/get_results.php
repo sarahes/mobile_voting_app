@@ -1,7 +1,9 @@
 <?php
 	
-	function get_results($conn)
+	function get_results()
 	{
+        include_once('config/db.php');
+
 		//get the total number of votes 
 		$total = total_votes($conn);
 		echo "<p>Total votes: <strong>" . $total . "</strong></p>";

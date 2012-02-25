@@ -1,6 +1,6 @@
-<p>Register to vote using your name and unique voter id: </p>
+<h2>Register to vote using your name and unique voter id: </h2>
 				
-	<form action="scripts/login.php" method="post" data-ajax="false">
+	<form action="" method="post" data-ajax="false">
 		<ul>
 			<li>
 				<label for="voterId">Voter Registration Number: </label>
@@ -10,7 +10,7 @@
 				<label for="name">First Name: </label>
 				<input type="text" name="name" id="name" value="" />
 			</li>
-			<li><input id="reg" type="submit" /></li>
+			<li><input id="reg" type="submit" value="Register to Vote" /></li>
 		</ul>		
 	</form>
 

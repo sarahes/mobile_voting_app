@@ -31,7 +31,6 @@
 			$stmt->bindValue(':voterId', $voterId);
 			$stmt->bindValue(':name', $name);
 			$stmt->execute(); 	
-
 		}
 	}
 	else 

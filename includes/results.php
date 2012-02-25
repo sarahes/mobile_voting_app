@@ -9,9 +9,10 @@
 			echo "Thank you for vote! Here are the current results:";
 		}
 	}*/
+    include_once('scripts/get_results.php');
 	
 ?>
 			
 		<div class="results">		
-			<?php get_results($conn); ?>		
+			<?php get_results(); ?>		
 		</div>	

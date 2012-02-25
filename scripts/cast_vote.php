@@ -10,5 +10,5 @@
 	$stmt->execute();
 
 	//vote successfully cast, forward voter to results page
-	header("Location: ../results.php");
+	echo json_encode(array('voterId' => $voterId, 'candidateId' => $candidateId));
 ?>

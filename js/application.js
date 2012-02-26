@@ -14,6 +14,8 @@ $(document).ready(function() {
 				{
                     var voterId = data.voterId;
                     var name = data.name;
+                    $.cookie("voterId", data.voterId);
+
                     voterMessage = document.getElementById('voterMessage');
                     voterMessage.innerHTML = "<p>Welcome, " + name + ".</p><p>Here are your candidates. Select one to view more information or cast your vote. </p>";
 					$.mobile.changePage($("#vote"));	

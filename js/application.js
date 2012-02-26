@@ -59,6 +59,26 @@ $(document).ready(function() {
 				
         return false;
 	});
+    
+    $('#BettyBoop').tap(function(e) {		
+		e.preventDefault();        
+         
+		$.mobile.changePage($("#bettybooppage"));	        
+	});
+    
+     $('#BugsBunny').tap(function(e) {		
+		e.preventDefault();       
+                
+		$.mobile.changePage($("#bugsbunnypage"));	
+        
+	});
+    
+     $('#DonaldDuck').tap(function(e) {		
+		e.preventDefault();        
+           
+		$.mobile.changePage($("#donaldduckpage"));	
+        
+	});
 
    
 });

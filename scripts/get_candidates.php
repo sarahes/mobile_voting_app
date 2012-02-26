@@ -31,6 +31,5 @@
             echo '<p><a href="" id="'. $candidateIdName .'"class="candidateLink" title="Click to view this candidate" />'. $candidateName .'</a></p>';		
             $count++;
         } 
-    }    
-   
+    }       
 ?>

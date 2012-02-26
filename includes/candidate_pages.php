@@ -1,6 +1,6 @@
 <?php
     global $candidates;
-    
+    $count = 1;
     foreach($candidates as $candidateName)
     {   
         $candidateIdName = preg_replace("/\s/", "", $candidateName);
@@ -17,6 +17,8 @@
                 
                 <form action="" method="post" data-ajax="false">
                     <p><img src="images/<?php echo $candidateImg ?>.jpg" alt="<?php echo $candidateName ?>" /></p>
+                     <input type="hidden" id="voterId" value="<?php echo $voterId ?>" /></li>
+                      <input type="hidden" id="candidateId" value="<?php echo $count ?>" /></li>
                     <input type="submit" id="castvote" value="Vote for <?php echo $candidateName ?>" /></li>   
 
                 </form>
@@ -24,5 +26,6 @@
         </div>
         
     <?php
+    $count++;
     } //end the for each loop
     ?>

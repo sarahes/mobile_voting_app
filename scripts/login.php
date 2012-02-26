@@ -1,6 +1,4 @@
-<?php
-	session_start();
-	
+<?php	
 	$voterId = $_POST["voterId"];
 	$name = $_POST["name"];
 	$alreadyVoted = false;
@@ -9,9 +7,7 @@
 	
 	//validate that voterId is a number between 1001 and 1049
 	if(is_numeric($voterId) && (1001 < $voterId && $voterId < 1049))
-	{
-		$_SESSION['logged'] = true;	
-		
+	{		
 		//check if a record for current voterId already exists in voters table
 		$q = $conn->prepare("select * from voters where voter_id = :voterId");
 		$q->bindValue(':voterId', $voterId);
@@ -34,8 +30,7 @@
 		}
 	}
 	else 
-	{	
-		$_SESSION['logged'] = false;
+	{			
 		$voterId = false;	
 	}
 	echo json_encode(array('voterId' => $voterId, 'name' => $name, 'alreadyVoted' => $alreadyVoted));

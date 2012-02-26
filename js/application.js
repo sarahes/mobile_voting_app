@@ -11,7 +11,11 @@ $(document).ready(function() {
 		function(data) {
 			if(data.voterId){						
 				if(!data.alreadyVoted)
-				{						
+				{
+                    var voterId = data.voterId;
+                    var name = data.name;
+                    voterMessage = document.getElementById('voterMessage');
+                    voterMessage.innerHTML = "<p>Welcome, " + name + ".</p><p>Here are your candidates. Select one to view more information or cast your vote. </p>";
 					$.mobile.changePage($("#vote"));	
 				}
 				else

@@ -11,8 +11,8 @@
 	}*/
     include_once('scripts/get_results.php');
 	
-?>
-			
-		<div class="results">		
-			<?php get_results(); ?>		
-		</div>	
+?>		
+    <div id="alreadyVoted"> </div>
+	<div class="results">		
+		<?php getResults(); ?>		
+	</div>	

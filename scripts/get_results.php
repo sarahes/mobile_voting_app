@@ -1,11 +1,11 @@
 <?php
 	
-	function get_results()
-	{
-        include_once('config/db.php');
-
+    include_once('config/db.php');
+    
+	function getResults()
+	{ 
 		//get the total number of votes 
-		$total = total_votes($conn);
+		$total = totalVotes($conn);
 		echo "<p>Total votes: <strong>" . $total . "</strong></p>";
 		
 		//get all of the candidates
@@ -33,6 +33,7 @@
 
 			$percent = round(($count / $total) * 100);			
 			
+            //display the candidate's name and the number of votes they have
 			echo '<div class="candidate">';
 			echo '<p>' . $candidateName . ': ' . $count . '</p>';	
 			echo '</div>';
@@ -51,8 +52,9 @@
 		
 	}
 	
-	function total_votes($conn)
+	function totalVotes($conn)
 	{
+        //get the total number of votes for all candidates
 		$t = $conn->prepare("select * from voters where candidate_id != 0");		
 		$t->execute();
 			

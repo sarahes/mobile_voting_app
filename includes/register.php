@@ -1,5 +1,6 @@
 <h2>Register to vote using your name and unique voter id: </h2>
-				
+	
+    <div class="hide" id="error"> </div>
 	<form action="" method="post" data-ajax="false">
 		<ul>
 			<li>

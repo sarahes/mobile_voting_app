@@ -1,7 +1,7 @@
 <?php
 	try 
 	{
-		//db connection will need to be updated when we move to to sulley
+		//db connection will need to be updated when we move to sulley
 		$user = "root";
 		$pwd = "";
 		

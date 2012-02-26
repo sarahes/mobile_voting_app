@@ -9,6 +9,9 @@
 	$stmt->bindValue(':candidateId', $candidateId);
 	$stmt->execute();
 
+    //Get rid of the voterId cookie
+    setcookie("voterId","",time()-3600); 
+    
 	//vote successfully cast, forward voter to results page
 	echo json_encode(array('voterId' => $voterId, 'candidateId' => $candidateId));
 ?>

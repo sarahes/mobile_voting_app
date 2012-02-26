@@ -13,12 +13,13 @@ $(document).ready(function() {
 				if(!data.alreadyVoted)
 				{
                     var voterId = data.voterId;
-                    var name = data.name;
+                    //var name = data.name;
                     $.cookie("voterId", data.voterId);
 
-                    voterMessage = document.getElementById('voterMessage');
-                    voterMessage.innerHTML = "<p>Welcome, " + name + ".</p><p>Here are your candidates. Select one to view more information or cast your vote. </p>";
-					$.mobile.changePage($("#vote"));	
+                    //voterMessage = document.getElementById('voterMessage');
+                    // voterMessage.innerHTML = "<p>Welcome, " + name + ".</p><p>Here are your candidates. Select one to view more information or cast your vote. </p>";
+					//$.mobile.changePage($("#vote"));	
+                    $.mobile.changePage( "vote.php", { transition: "slideup"} );
 				}
 				else
 				{
@@ -48,11 +49,11 @@ $(document).ready(function() {
               
 		$.post('scripts/cast_vote.php', {
             voterId : $('#voterId').val(),
-			candidateId : $(":checked").val()								
+			candidateId : $("#candidateId").val()								
 		},
 		function(data) {
             if(data.candidateId)
-            {
+            {                
 				$.mobile.changePage($("#results"));	
             }
             else
@@ -66,25 +67,20 @@ $(document).ready(function() {
         return false;
 	});
     
-    $('#BettyBoop').tap(function(e) {		
-		e.preventDefault();        
-         
-		$.mobile.changePage($("#bettybooppage"));	        
-	});
-    
-     $('#BugsBunny').tap(function(e) {		
-		e.preventDefault();       
-                
-		$.mobile.changePage($("#bugsbunnypage"));	
+    $('#showbettyboop').tap(function(e) {  
+        //alert("Test");
+        e.preventDefault();         
+        $.mobile.changePage($("#bettybooppage"));	        
+    });
         
-	});
-    
-     $('#DonaldDuck').tap(function(e) {		
-		e.preventDefault();        
-           
-		$.mobile.changePage($("#donaldduckpage"));	
+    $('#showbugsbunny').tap(function(e) {		
+        e.preventDefault();
+        $.mobile.changePage($("#bugsbunnypage"));        
+    });
         
-	});
-
-   
+    $('#showdonaldduck').tap(function(e) {		
+        e.preventDefault();
+        $.mobile.changePage($("#donaldduckpage"));	        
+    }); 
 });
+

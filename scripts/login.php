@@ -1,8 +1,8 @@
-<?php	
+<?php    
 	$voterId = $_POST["voterId"];
 	$name = $_POST["name"];
 	$alreadyVoted = false;
-	
+    
 	include_once("../config/db.php");	
 	
 	//validate that voterId is a number between 1001 and 1049
@@ -33,6 +33,7 @@
 	{			
 		$voterId = false;	
 	}
+    
 	echo json_encode(array('voterId' => $voterId, 'name' => $name, 'alreadyVoted' => $alreadyVoted));
 
 ?>

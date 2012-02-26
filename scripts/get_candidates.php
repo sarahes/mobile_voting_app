@@ -27,8 +27,9 @@
         $count = 1;
         foreach($candidates as $candidateName)
         {	
-            $candidateIdName = preg_replace("/\s/", "", $candidateName);
-            echo '<p><a href="" id="'. $candidateIdName .'"class="candidateLink" title="Click to view this candidate" />'. $candidateName .'</a></p>';		
+            $candidateIdName = "show".strtolower(preg_replace("/\s/", "", $candidateName));
+            
+            echo '<p><a href="" id="'. $candidateIdName .'"class="candidatelink" title="Click to view this candidate" data-ajax="false" />'. $candidateName .'</a></p>';		
             $count++;
         } 
     }       

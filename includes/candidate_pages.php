@@ -1,6 +1,7 @@
-<?php
-    global $candidates;
+<?php   
+    global $candidates;   
     $count = 1;
+    
     foreach($candidates as $candidateName)
     {   
         $candidateIdName = preg_replace("/\s/", "", $candidateName);
@@ -14,13 +15,12 @@
             </div>
             <div data-role="content" class="center">       
                 <h2><?php echo $candidateName ?></h2> 
-                
+                    <?php print_r($_COOKIE); ?>
                 <form action="" method="post" data-ajax="false">
                     <p><img src="images/<?php echo $candidateImg ?>.jpg" alt="<?php echo $candidateName ?>" /></p>
-                     <input type="hidden" id="voterId" value="<?php echo $voterId ?>" /></li>
-                      <input type="hidden" id="candidateId" value="<?php echo $count ?>" /></li>
-                    <input type="submit" id="castvote" value="Vote for <?php echo $candidateName ?>" /></li>   
-
+                    <input type="hidden" id="voterId" value="<?php echo $voterId ?>" />
+                    <input type="hidden" id="candidateId" value="<?php echo $count ?>" />
+                    <input type="submit" id="castvote" value="Vote for <?php echo $candidateName ?>" />
                 </form>
             </div>
         </div>

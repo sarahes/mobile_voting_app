@@ -15,8 +15,13 @@
       <div data-role="header">
         <h1>Toontown Election</h1>
       </div>
-      <div data-role="content" class="center">
-            <?php include_once 'includes/results.php' ?>
+      <div data-role="content">		
+			<ul data-role="listview">		
+				<?php 
+					include_once('scripts/get_results.php');
+					getResults(); 
+				?>		
+			</ul>
       </div>
     </div>    
 </body>

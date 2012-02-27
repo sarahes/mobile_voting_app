@@ -17,6 +17,22 @@
                 
         return $candidates;             
     }
+	
+	function getCandidateVotes($name)
+	{
+		include('config/db.php');
+		
+		//get the number of votes for that candidate
+		$q = $conn->prepare("select * from voters as v 
+			left join candidates as c on v.candidate_id = c.id	  			 
+			where c.name = :name");
+		$q->bindValue(':name', $name);
+		$q->execute();		
+		
+		$count = $q->rowCount();
+		
+		return $count;
+	}
     
     //this function creates a link on the vote page to each candidate's individual page
     function candidateLinks()

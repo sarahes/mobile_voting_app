@@ -4,9 +4,7 @@
 	{ 
         include('config/db.php');
         
-		//get the total number of votes 
 		$total = totalVotes($conn);
-		echo "<p>Total votes: <strong>" . $total . "</strong></p>";
 		
 		//get all of the candidates
 		$c = $conn->query("select * from candidates");          
@@ -30,22 +28,21 @@
 			$q->execute();
 			
 			$count = $q->rowCount();
-
-			$percent = round(($count / $total) * 100);			
+			$percent = round(($count / $total) * 100);
 			
-            //display the candidate's name and the number of votes they have
-			echo '<div class="candidate">';
-			echo '<p>' . $candidateName . ': ' . $count . '</p>';	
-			echo '</div>';
-		?> 
-			<div class="bar">
-				<p class="graph" style="width:<?php echo $percent; ?>%">		 
+			$candidateImg = strtolower(preg_replace("/\s/", "", $candidateName));
+            
+		?> 			
+				
+			<li> 
+				<img src="images/<?php echo $candidateImg ?>.jpg" alt="<?php echo $candidateName ?>" />
+				<div class="candidateCount"><?php echo $candidateName . ': ' . $count ?></div>
+				<div class="bar">
+				<p class="graph" style="width:<?php echo $percent; ?>%">
 					<?php echo $percent; ?>%
 				</p>
-			</div>
-			
-			 
-			<div class="clear"></div>
+				</div>
+			</li>	
 			
 		<?php
 		}

@@ -6,21 +6,21 @@
 	include_once("../config/db.php");	
 	
 	//validate that voterId is a number between 1001 and 1049
-	if(is_numeric($voterId) && (1001 < $voterId && $voterId < 1049))
+	if(is_numeric($voterId) && (1001 <= $voterId && $voterId <= 1049))
 	{		
 		//check if a record for current voterId already exists in voters table
 		$q = $conn->prepare("select * from voters where voter_id = :voterId");
 		$q->bindValue(':voterId', $voterId);
 		$q->execute();
 	
-		//if the voterId already exists
-		if($q->rowCount() > 0)
+		
+		if($q->rowCount() > 0) //if the voterId already exists
 		{
 			//the user already voted, send them to the results page			
 			$alreadyVoted = true;
 		}
-		//voterId does not exist in db, this is a new voter
-		else
+		
+		else //voterId does not exist in db, this is a new voter
 		{			
 			unset($q); //unset the select query above
 			$stmt = $conn->prepare("insert into voters values (:voterId, :name, '')");
@@ -29,7 +29,7 @@
 			$stmt->execute(); 	
 		}
 	}
-	else 
+	else //the voterId was invalid
 	{			
 		$voterId = false;	
 	}

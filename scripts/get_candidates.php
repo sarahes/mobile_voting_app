@@ -25,12 +25,13 @@
         
         //loop through each candidate name in the candidates array
         $count = 1;
+        echo "<ul data-role=\"listview\">";
         foreach($candidates as $candidateName)
-        {	
-            $candidateIdName = "show".strtolower(preg_replace("/\s/", "", $candidateName));
-            
-            echo '<p><a href="" id="'. $candidateIdName .'"class="candidatelink" title="Click to view this candidate" data-ajax="false" />'. $candidateName .'</a></p>';		
+        {            
+            $candidatePage = strtolower(preg_replace("/\s/", "", $candidateName)) . "page";
+            echo '<li><a href="#'. $candidatePage .'"class="candidatelink" title="Click to view this candidate" data-ajax="false" />'. $candidateName .'</a></li>';		
             $count++;
         } 
+        echo "</ul>";
     }       
 ?>

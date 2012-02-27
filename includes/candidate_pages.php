@@ -14,8 +14,7 @@
                 <h1>Toontown Election</h1>        
             </div>
             <div data-role="content" class="center">       
-                <h2><?php echo $candidateName ?></h2> 
-                    <?php print_r($_COOKIE); ?>
+                <h2><?php echo $candidateName ?></h2>                     
                 <form action="" method="post" data-ajax="false">
                     <p><img src="images/<?php echo $candidateImg ?>.jpg" alt="<?php echo $candidateName ?>" /></p>
                     <input type="hidden" id="voterId" value="<?php echo $voterId ?>" />

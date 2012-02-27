@@ -1,8 +1,7 @@
-<?php
-	   
+<?php 
 	function getResults()
 	{ 
-        include('config/db.php');
+        include('../config/db.php');
         
 		$total = totalVotes($conn);
 		
@@ -17,6 +16,7 @@
 			array_push($candidates, $candidate->name);				
 		}
 		
+        echo "<ul data-role=\"listview\">";
 		//loop through each candidate name in the candidates array
 		foreach($candidates as $candidateName)
 		{	
@@ -44,8 +44,9 @@
 				</div>
 			</li>	
 			
-		<?php
+		<?php        
 		}
+        echo "</ul>";
 		
 	}
 	
@@ -59,5 +60,6 @@
 		
 		return $total;
 	}
-
+   
+    getResults();
 ?>

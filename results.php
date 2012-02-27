@@ -13,7 +13,7 @@
 <body>   
     <div data-role="page" id="results">
       <div data-role="header">
-        <h1>Toontown Election</h1>
+        <h1>Toontown Election Results</h1>
       </div>
       <div data-role="content">		
 			<ul data-role="listview">		

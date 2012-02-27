@@ -1,6 +1,5 @@
 <?php
-	$voterId = $_POST["voterId"];
-    mail('ssheehan131@gmail.com', $voterId, 'dfsdf');
+	$voterId = $_POST["voterId"];   
 	$candidateId = $_POST["candidateId"];
 	include_once("../config/db.php");	
 		
@@ -11,5 +10,5 @@
 	$stmt->execute();
     
 	//vote successfully cast, forward voter to results page
-	echo json_encode(array('voterId' => $voterId, 'candidateId' => $candidateId, 'query' => "update voters set candidate_id = ".$candidateId." where voter_id = ".$voterId));
+    echo json_encode(array('voterId' => $voterId, 'candidateId' => $candidateId));
 ?>

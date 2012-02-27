@@ -17,7 +17,7 @@
             </div>
             <div data-role="content">       
                 <h2><?php echo $candidateName ?></h2>                     
-                <form action="" method="post" data-ajax="false">					
+                <form action="" method="post" data-ajax="false" >					
                     <p><img src="images/<?php echo $candidateImg ?>.png" alt="<?php echo $candidateName ?>" /></p> 
 					<p>About this candidate: ... </p>
 					<?php echo "<p>Votes: ". getCandidateVotes($candidateName) ."</p>"; ?>

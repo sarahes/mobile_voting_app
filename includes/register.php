@@ -1,5 +1,3 @@
-<h2>Register to Vote </h2>
-	
     <p>Enter your unique voter id and name. </p>
     <div class="hide" id="error"> </div>
     

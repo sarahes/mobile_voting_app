@@ -27,13 +27,13 @@
                         if(!data.alreadyVoted)
                         {      
                             var welcome = document.getElementById('welcome');
-                            welcome.innerHTML += "<p>Welcome," + voter.name + ". Here are your candidates. Select one to view more information or cast your vote. </p>";                            
+                            welcome.innerHTML += "<p>Welcome, " + voter.name + ". Here are your candidates. Select one to view more information or cast your vote. </p>";                            
                             $.mobile.changePage($("#vote"));                   
                         }
                         else
-                        {
-                            alreadyVoted = true;                    
-                            $.mobile.changePage("results.php?alreadyVoted=" + alreadyVoted);   								
+                        {                            
+                            alert("You have already voted. You will now be forwarded to the results.");
+                            $.mobile.changePage("results.php");   								
                         }
                     }
                     else
@@ -56,9 +56,8 @@
                     voterId : voter.id,
                     candidateId : $(this).parent().parent().children('input[type=hidden]').val()			
                 },
-                function(data) {
-                    alert("test");
-                    $.mobile.changePage("results.php?alreadyVoted=" + alreadyVoted);                 
+                function(data) {                    
+                    $.mobile.changePage("results.php");                 
                 }, "json"); 
             });
         });   
@@ -66,26 +65,23 @@
 </head>
 
 <body>
-    <!-- Page - Register -->
+    <!-- Registration Page -->
     <div data-role="page" id="register">
       <div data-role="header">
-        <h1>Toontown Election</h1>        
+        <h1>Register to Vote</h1>        
       </div>
       <div data-role="content" class="center">       
         <?php include_once 'includes/register.php' ?>
       </div>
     </div>
     
-     <!-- Page - Vote -->
+     <!-- Vote Page -->
     <div data-role="page" id="vote">
       <div data-role="header">
-        <h1>Toontown Election</h1>
+        <h1>Candidates</h1>
       </div>
       <div data-role="content" class="center">
-        <?php include('scripts/get_candidates.php'); ?>
-
-        <h2>Candidates </h2>
-            
+        <?php include('scripts/get_candidates.php'); ?>            
             <div id="welcome"> </div>
             <?php                
                 global $candidates; 

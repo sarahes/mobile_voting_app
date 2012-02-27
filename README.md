@@ -1,6 +1,8 @@
 # Project 2 - DIG4104 #
 
-Group Members: 
+Group Members
+------- 
+
 * Sarah Sheehan
 * Adam Boerema
 * Melinda Velasquez

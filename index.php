@@ -91,7 +91,7 @@
       </div>
     </div>
 
-    <!-- Here is where the individual candidate pages will go. The number of pages will depend on the number of candidates currently entered into the database. -->
+    <!-- Candidate Pages -->
     <?php include_once 'includes/candidate_pages.php' ?>    
 
 </body>

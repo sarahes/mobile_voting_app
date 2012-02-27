@@ -27,9 +27,10 @@
         $count = 1;
         echo "<ul data-role=\"listview\">";
         foreach($candidates as $candidateName)
-        {            
-            $candidatePage = strtolower(preg_replace("/\s/", "", $candidateName)) . "page";
-            echo '<li><a href="#'. $candidatePage .'"class="candidatelink" title="Click to view this candidate" data-ajax="false" />'. $candidateName .'</a></li>';		
+        {     
+            $candidateImg = $candidatePage = strtolower(preg_replace("/\s/", "", $candidateName));       
+            $candidatePage = $candidateImg . "page";
+            echo '<li><a href="#'. $candidatePage .'"class="candidatelink" title="Click to view this candidate" data-ajax="false"><img src="images/'.$candidateImg.'.jpg" />'. $candidateName .'</a></li>';		
             $count++;
         } 
         echo "</ul>";

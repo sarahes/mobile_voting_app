@@ -17,8 +17,8 @@
                 <h2><?php echo $candidateName ?></h2>                     
                 <form action="" method="post" data-ajax="false">
                     <p><img src="images/<?php echo $candidateImg ?>.jpg" alt="<?php echo $candidateName ?>" /></p>                   
-                    <input type="hidden" id="candidateId" value="<?php echo $count ?>" />
-                    <input type="submit" id="castvote" value="Vote for <?php echo $candidateName ?>" />
+                    <input type="hidden" class="candidateId" value="<?php echo $count ?>" />
+                    <input type="submit" class="castvote" value="Vote for <?php echo $candidateName ?>" />
                 </form>
             </div>
         </div>

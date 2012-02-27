@@ -49,11 +49,13 @@
                 
             });	
             
-            $('#castvote').tap(function(e) {        
-                e.preventDefault();                
+            $('.castvote').tap(function(e) {  
+                var candidate = $(this).parent().parent().children('input[type=hidden]').val();               
+                e.preventDefault(); 
+                
                 $.post('scripts/cast_vote.php', {
                     voterId : voter.id,
-                    candidateId : $("#candidateId").val()				
+                    candidateId : candidate				
                 },
                 function(data) {
                     $.mobile.changePage("results.php");	                

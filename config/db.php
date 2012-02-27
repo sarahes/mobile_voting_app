@@ -1,7 +1,7 @@
 <?php
 
     //set to 0 if working locally
-    $sulley = 1;
+    $sulley = 0;
     
     if($sulley)
     {

@@ -11,5 +11,5 @@
 	$stmt->execute();
     
 	//vote successfully cast, forward voter to results page
-	echo json_encode(array('voterId' => $voterId, 'candidateId' => $candidateId));
+	echo json_encode(array('voterId' => $voterId, 'candidateId' => $candidateId, 'query' => "update voters set candidate_id = ".$candidateId." where voter_id = ".$voterId));
 ?>

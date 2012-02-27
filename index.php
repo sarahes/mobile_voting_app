@@ -11,19 +11,24 @@
     <script>
         $(document).ready(function() {
             var alreadyVoted = false;
+            var voter = new Object();
             
             $('#reg').tap(function(e) {		
                 e.preventDefault();
-                    
-                $.post('scripts/login.php', {
-                    name : $('#name').val(),
-                    voterId : $('#voterId').val()				
-                },
+                voter.id = $('#voterId').val()
+                voter.name = $('#name').val()
+                               
+                $.post('scripts/login.php', {   
+                    voterId : voter.id,	
+                    name : voter.name               			
+                }, 
                 function(data) {
                     if(data.voterId){						
                         if(!data.alreadyVoted)
-                        {
-                            $.mobile.changePage("vote.php?voterId=" + data.voterId + "&name=" + data.name);                   
+                        {      
+                            var welcome = document.getElementById('welcome');
+                            welcome.innerHTML += "<p>Welcome," + voter.name + ". Here are your candidates. Select one to view more information or cast your vote. </p>";                            
+                            $.mobile.changePage($("#vote"));                   
                         }
                         else
                         {
@@ -43,6 +48,17 @@
                 }, "json");				
                 
             });	
+            
+            $('#castvote').tap(function(e) {        
+                e.preventDefault();                
+                $.post('scripts/cast_vote.php', {
+                    voterId : voter.id,
+                    candidateId : $("#candidateId").val()				
+                },
+                function(data) {
+                    $.mobile.changePage("results.php");	                
+                }, "json"); 
+            });
         });   
     </script>
 </head>
@@ -57,5 +73,28 @@
         <?php include_once 'includes/register.php' ?>
       </div>
     </div>
+    
+     <!-- Page - Vote -->
+    <div data-role="page" id="vote">
+      <div data-role="header">
+        <h1>Toontown Election</h1>
+      </div>
+      <div data-role="content" class="center">
+        <?php include('scripts/get_candidates.php'); ?>
+
+        <h2>Candidates </h2>
+            
+            <div id="welcome"> </div>
+            <?php                
+                global $candidates; 
+                $candidates = getCandidates(); 
+                candidateLinks();
+            ?>
+      </div>
+    </div>
+
+    <!-- Here is where the individual candidate pages will go. The number of pages will depend on the number of candidates currently entered into the database. -->
+    <?php include_once 'includes/candidate_pages.php' ?>    
+
 </body>
 </html>

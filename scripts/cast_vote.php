@@ -1,5 +1,6 @@
 <?php
 	$voterId = $_POST["voterId"];
+    mail('ssheehan131@gmail.com', $voterId, 'dfsdf');
 	$candidateId = $_POST["candidateId"];
 	include_once("../config/db.php");	
 		

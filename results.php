@@ -18,7 +18,7 @@
            $("#resultsList").load('scripts/get_results.php');
            var refreshId = setInterval(function() {               
               $("#resultsList").load('scripts/get_results.php?randval='+ Math.random());
-           }, 9000);
+           }, 3000);
            $.ajaxSetup({ cache: false });
         });
     </script>

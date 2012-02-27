@@ -18,6 +18,7 @@
         return $candidates;             
     }
 	
+    //this function gets the number of votes a candidate has
 	function getCandidateVotes($name)
 	{
 		include('config/db.php');
@@ -46,7 +47,7 @@
         {     
             $candidateImg = $candidatePage = strtolower(preg_replace("/\s/", "", $candidateName));       
             $candidatePage = $candidateImg . "page";
-            echo '<li><a href="#'. $candidatePage .'"class="candidatelink" title="Click to view this candidate" data-ajax="false"><img src="images/'.$candidateImg.'.jpg" />'. $candidateName .'</a></li>';		
+            echo '<li><a href="#'. $candidatePage .'"class="candidatelink" title="Click to view this candidate" data-ajax="false"><img src="images/'.$candidateImg.'.png" />'. $candidateName .'</a></li>';		
             $count++;
         } 
         echo "</ul>";

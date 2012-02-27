@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="css/styles.css" />
     <script>
          $(document).ready(function() {
-          $("#resultsDiv").load('scripts/get_results.php');
+          $("#resultsList").load('scripts/get_results.php');
            var refreshId = setInterval(function() {               
-              $("#resultsDiv").load('scripts/get_results.php?randval='+ Math.random());
+              $("#resultsList").load('scripts/get_results.php?randval='+ Math.random());
            }, 9000);
            $.ajaxSetup({ cache: false });
         });
@@ -26,7 +26,7 @@
         <h1>Toontown Election Results</h1>
       </div>
       <div data-role="content">		
-			<div id="resultsDiv">
+			<div id="resultsList">
 					
             </div>			
       </div>

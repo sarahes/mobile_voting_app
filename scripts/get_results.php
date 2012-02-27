@@ -16,7 +16,7 @@
 			array_push($candidates, $candidate->name);				
 		}
 		
-        echo "<ul data-role=\"listview\">";
+        
 		//loop through each candidate name in the candidates array
 		foreach($candidates as $candidateName)
 		{	
@@ -32,21 +32,18 @@
 			
 			$candidateImg = strtolower(preg_replace("/\s/", "", $candidateName));
             
-		?> 			
-				
-			<li> 
-				<img src="images/<?php echo $candidateImg ?>.jpg" alt="<?php echo $candidateName ?>" />
-				<div class="candidateCount"><?php echo $candidateName . ': ' . $count ?></div>
-				<div class="bar">
-				<p class="graph" style="width:<?php echo $percent; ?>%">
-					<?php echo $percent; ?>%
-				</p>
-				</div>
-			</li>	
-			
+		?> 	
+            <div>
+                <img src="images/<?php echo $candidateImg ?>_thumbnail.png" alt="<?php echo $candidateName ?>" />
+                <div class="candidateCount"><?php echo $candidateName . ': ' . $count ?></div>
+                <div class="bar">
+                <p class="graph" style="width:<?php echo $percent; ?>%">
+                    <?php echo $percent; ?>%
+                </p>
+                </div>
+            </div>
 		<?php        
-		}
-        echo "</ul>";
+		}     
 		
 	}
 	

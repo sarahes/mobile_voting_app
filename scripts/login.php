@@ -6,7 +6,7 @@
 	include_once("../config/db.php");	
 	
 	//validate that voterId is a number between 1001 and 1049
-	if(is_numeric($voterId) && (1001 <= $voterId && $voterId <= 1049))
+	if(is_numeric($voterId) && (1001 <= $voterId && $voterId <= 9999))
 	{		
 		//check if a record for current voterId already exists in voters table
 		$q = $conn->prepare("select * from voters where voter_id = :voterId");

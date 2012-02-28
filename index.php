@@ -4,10 +4,12 @@
 <title>DIG 4104c Project 2 - Adam Boerema - Sarah Sheehan - Melinda Velasquez</title>
 	<meta charset="utf-8" />
   	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
-    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-    <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
-    <link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/themes/town.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile.structure-1.0.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+	<link rel="stylesheet" href="css/styles.css" />
+	</head>
     <script>
         $(document).ready(function() {
             var alreadyVoted = false;
@@ -66,7 +68,7 @@
 
 <body>
     <!-- Registration Page -->
-    <div data-role="page" id="register">
+    <div data-role="page" id="register" data-theme="a">
       <div data-role="header">
         <h1>Register to Vote</h1>        
       </div>
@@ -76,7 +78,7 @@
     </div>
     
      <!-- Vote Page -->
-    <div data-role="page" id="vote">
+    <div data-role="page" id="vote" data-theme="a">
       <div data-role="header">
         <h1>Candidates</h1>
       </div>

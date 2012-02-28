@@ -12,7 +12,7 @@
 </head>
 
 <body>   
-    <div data-role="page" id="results">
+    <div data-role="page" id="results" data-theme="a">
      <script>
         $("#results").live('pageinit',function() {
            $("#resultsList").load('scripts/get_results.php');

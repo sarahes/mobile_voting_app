@@ -24,7 +24,7 @@
     </script>
       <div data-role="header">
         <h1>Toontown Election Results</h1>
-        <a href="#register" data-icon="home">Home</a>
+        <a href="index.php" data-icon="home">Home</a>
       </div>
       <div data-role="content">		
 			<div id="resultsList">

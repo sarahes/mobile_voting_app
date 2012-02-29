@@ -1,7 +1,43 @@
+@font-face {
+    font-family: 'KomikaAxisRegular';
+    src: url('KOMIKAX_-webfont.eot');
+    src: url('KOMIKAX_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('KOMIKAX_-webfont.woff') format('woff'),
+         url('KOMIKAX_-webfont.ttf') format('truetype'),
+         url('KOMIKAX_-webfont.svg#KomikaAxisRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+h1 {
+	font: 'KomikaAxisRegular', Arial, sans-serif !important;
+	letter-spacing: 2;
+	font-weight: normal;
+	text-shadow: 4px 4px 0 black !important;
+}
+ul{
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+li{margin-bottom: 20px;}
 .clear{clear:both;}
 .hide{display: none;}
-.show{display: block;}
- 
+.show{display: block;} 
+ #error {
+    background: #D65E62;    
+    color: #F4F0E6;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 15px;
+    text-shadow: 0 -1px 0 #000000;
+} 
+#welcome {       
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 15px;
+    margin-bottom: 20px;    
+} 
+
 .candidate{
 	float: left;
 	width: 75px;
@@ -16,35 +52,9 @@
 	width: 300px;
 	display: inline-block;
 }
-
 .graph {	
 	background: green;	
 	color: #fff;	
 }
 
-#error {
-    background-color: #8D2F27;
-    border: 1px solid #000000;
-    color: #F4F0E6;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 5px 15px;
-    text-shadow: 0 -1px 0 #000000;
-} 
 
-#welcome {       
-    font-size: 18px;
-    font-weight: bold;
-    padding: 5px 15px;
-    margin-bottom: 20px;    
-} 
-
-ul{
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0;
-}
-
-li{
-    margin-bottom: 20px;
-}

@@ -1,4 +1,4 @@
-	<p>Enter your unique voter id and name. </p>
+	<p>Welcome to the Toon Town voting system. Enter your unique voter id and name: </p>
 	
 	<div class="hide" id="error"> </div>
 	<form action="" method="post" data-ajax="false">

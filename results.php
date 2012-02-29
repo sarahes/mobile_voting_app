@@ -23,7 +23,7 @@
         });
     </script>
       <div data-role="header">
-        <h1>Toontown Election Results</h1>
+        <h1>Toon Town Votes</h1>
       </div>
       <div data-role="content">		
 			<div id="resultsList">

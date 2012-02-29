@@ -70,9 +70,9 @@
     <!-- Registration Page -->
     <div data-role="page" id="register" data-theme="a">
       <div data-role="header">
-        <h1>Register to Vote</h1>        
+        <h1>Toon Town Votes</h1>        
       </div>
-      <div data-role="content" class="center">       
+      <div data-role="content" class="center"> 		
         <?php include_once 'includes/register.php' ?>
       </div>
     </div>
@@ -80,7 +80,7 @@
      <!-- Vote Page -->
     <div data-role="page" id="vote" data-theme="a">
       <div data-role="header">
-        <h1>Candidates</h1>
+        <h1>Toon Town Votes</h1>
       </div>
       <div data-role="content" class="center">
         <?php include('scripts/get_candidates.php'); ?>            

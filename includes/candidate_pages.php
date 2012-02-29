@@ -17,19 +17,20 @@
         $candidateImg = strtolower($candidateIdName);
         $candidatePage = strtolower($candidateIdName) . "page";
         
-    	console.log($candidateIdName);
     ?>
     
-        <div data-role="page" data-theme="a" id="<?php echo $candidatePage ?>">
+        <div data-role="page" data-theme="a" align="center" id="<?php echo $candidatePage ?>">
             <div data-role="header">
-                <h1>Toontown Election</h1>        
+                <h1>Toontown Election</h1> 
+                <a href="#vote" data-icon="back">Back</a>
             </div>
             <div data-role="content">       
                 <h2><?php echo $candidateName ?></h2>                     
                 <form action="" method="post" data-ajax="false" >					
-                    <p><img src="images/<?php echo $candidateImg ?>.png" alt="<?php echo $candidateName ?>" /></p> 
+                    <p class="character-image"><img src="images/<?php echo $candidateImg ?>.png" alt="<?php echo $candidateName ?>" /></p>
+                    <?php echo "<p class='character-votes'>Votes: ". getCandidateVotes($candidateName) ."</p>"; ?>
+                    <br class="clear" />
 					<p class="character-info"><?php echo $characterInfoPage["$candidateIdName"] ?></p>
-					<?php echo "<p>Votes: ". getCandidateVotes($candidateName) ."</p>"; ?>
                     <input type="hidden" class="candidateId" value="<?php echo $count ?>" />
                     <input type="submit" class="castvote" value="Vote for <?php echo $candidateName ?>" />
                 </form>

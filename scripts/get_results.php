@@ -16,7 +16,7 @@
 			array_push($candidates, $candidate->name);				
 		}
 		
-        
+       
 		//loop through each candidate name in the candidates array
 		foreach($candidates as $candidateName)
 		{	
@@ -28,23 +28,29 @@
 			$q->execute();
 			
 			$count = $q->rowCount();
-			$percent = round(($count / $total) * 100);
+			if($count > 0)
+			{				
+				$percent = round(($count / $total) * 100) . '%';
+			}	
+			else 
+			{
+				$percent = "n/a";
+			}
 			
 			$candidateImg = strtolower(preg_replace("/\s/", "", $candidateName));
-            
-		?> 	
-            <div>
-                <img src="images/<?php echo $candidateImg ?>_thumbnail.png" alt="<?php echo $candidateName ?>" />
-                <div class="candidateCount"><?php echo $candidateName . ': ' . $count ?></div>
-                <div class="bar">
-                <p class="graph" style="width:<?php echo $percent; ?>%">
-                  <span class="graph-percent"> <?php echo $percent; ?>% </span>
-                </p>
-                </div>
-            </div>
-		<?php        
-		}     
-		
+							
+			?> 	
+			<div>
+				<img src="images/<?php echo $candidateImg ?>_thumbnail.png" alt="<?php echo $candidateName ?>" />
+				<div class="candidateCount"><?php echo $candidateName . ': ' . $count ?></div>
+				<div class="bar">
+				<p class="graph" style="width:<?php echo $percent; ?>%">
+					<span class="graph-percent"> <?php echo $percent; ?> </span>
+				</p>
+				</div>
+				</div>
+			<?php 		
+		}
 	}
 	
 	function totalVotes($conn)

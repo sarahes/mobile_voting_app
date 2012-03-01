@@ -17,7 +17,7 @@
 				
 				$.post("scripts/delete_vote.php", { voterId : $(this).parent().parent().children('input[type=hidden]').val() },
 				function(data){
-					alert("This vote has been deleted"); 
+					alert("This vote has been removed"); 
 					location.reload(true);
 				});
                 
@@ -28,7 +28,7 @@
 				
 				$.post("scripts/delete_all_votes.php",
 				function(data){
-					alert("All votes have been deleted"); 
+					alert("All votes have been removed"); 
 					location.reload(true);
 				});
                 
@@ -40,7 +40,8 @@
 	<!-- Admin Page -->
     <div data-role="page" id="admin" data-theme="a" align="center">
       <div data-role="header">
-        <h1>Administrative</h1>        
+        <h1>Administrative</h1>
+		<a href="index.php" data-icon="home" data-ajax="false">Home</a>        
       </div>
       <div data-role="content">
 		<div id="votersList">

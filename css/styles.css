@@ -9,6 +9,20 @@ ul{
     padding-left: 0;
 }
 li{margin-bottom: 20px;}
+table{
+	width:100%;
+	border: 1px solid #000;
+	border-collapse: collapse;
+}
+th{
+	background: #000;
+	padding: 5px;
+}
+tr{
+	border-bottom: 1px solid #000;
+}
+tr.even{background: #6D1A27;}
+td{padding: 6px 10px;}
 .clear{clear:both;}
 .hide{display: none;}
 .show{display: block;} 

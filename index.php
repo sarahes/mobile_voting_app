@@ -74,6 +74,7 @@
       </div>
       <div data-role="content"> 
         <?php include_once 'includes/register.php' ?>
+		<p><a class="adminlink" href="admin" data-ajax="false">Admin Page</a> </p>
       </div>
     </div>
      <!-- Vote Page -->

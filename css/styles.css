@@ -1,8 +1,5 @@
-h1 {	
-	letter-spacing: 2;
-	font-weight: normal;
-	text-shadow: 4px 4px 0 black !important;
-}
+a.adminlink:link, a.adminlink:active, a.adminlink:visited{color: #F5BF3D !important;}
+a.adminlink:hover{color: #FFD159 !important;}
 ul{
     list-style-type: none;
     margin-left: 0;

@@ -44,7 +44,13 @@
 				<img src="images/<?php echo $candidateImg ?>_thumbnail.png" alt="<?php echo $candidateName ?>" />
 				<div class="candidateCount"><?php echo $candidateName . ': ' . $count ?></div>
 				<div class="bar">
-				<p class="graph" style="width:<?php echo $percent; ?>%">
+				<?php 
+				if($percent != "n/a"){
+				?>
+					<p class="graph" style="width:<?php echo $percent; ?>%">
+				<?php 
+				}
+				?>
 					<span class="graph-percent"> <?php echo $percent; ?> </span>
 				</p>
 				</div>

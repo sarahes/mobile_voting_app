@@ -38,7 +38,7 @@
                 <div class="candidateCount"><?php echo $candidateName . ': ' . $count ?></div>
                 <div class="bar">
                 <p class="graph" style="width:<?php echo $percent; ?>%">
-                    <?php echo $percent; ?>%
+                  <span class="graph-percent"> <?php echo $percent; ?>% </span>
                 </p>
                 </div>
             </div>

@@ -68,21 +68,29 @@
 
 <body>
     <!-- Registration Page -->
-    <div data-role="page" id="register" data-theme="a">
+    <div data-role="page" id="register" data-theme="a" align="center">
       <div data-role="header">
-        <h1>Toon Town Votes</h1>        
+        <h1>Register to Vote</h1>        
       </div>
-      <div data-role="content" class="center"> 		
+      <div data-role="content"> 
         <?php include_once 'includes/register.php' ?>
       </div>
     </div>
-    
-     <!-- Vote Page -->
-    <div data-role="page" id="vote" data-theme="a">
+    <!-- Admin Page -->
+    <div data-role="page" id="admin" data-theme="a" align="center">
       <div data-role="header">
-        <h1>Toon Town Votes</h1>
+        <h1>Administrative</h1>        
       </div>
-      <div data-role="content" class="center">
+      <div data-role="content">       
+        <?php include_once 'includes/admin.php' ?>
+      </div>
+    </div>
+     <!-- Vote Page -->
+    <div data-role="page" id="vote" data-theme="a" align="center">
+      <div data-role="header">
+        <h1>Toon Town Candidates</h1>
+      </div>
+      <div data-role="content">
         <?php include('scripts/get_candidates.php'); ?>            
             <div id="welcome"> </div>
             <?php                
@@ -92,7 +100,6 @@
             ?>
       </div>
     </div>
-
     <!-- Candidate Pages -->
     <?php include_once 'includes/candidate_pages.php' ?>    
 

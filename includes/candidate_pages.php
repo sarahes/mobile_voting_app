@@ -13,18 +13,22 @@
 		$voteCount = getCandidateVotes($candidateName);		
         $candidateIdName = preg_replace("/\s/", "", $candidateName);
         $candidateImg = strtolower($candidateIdName);
-        $candidatePage = strtolower($candidateIdName) . "page"; 
+        $candidatePage = strtolower($candidateIdName) . "page";
+
     ?>
     
-        <div data-role="page" data-theme="a" id="<?php echo $candidatePage ?>">
+        <div data-role="page" data-theme="a" align="center" id="<?php echo $candidatePage ?>">
             <div data-role="header">
-                <h1>Toon Town Votes</h1>        
+                <h1>Toontown Election</h1> 
+                <a href="#vote" data-icon="back">Back</a>
             </div>
             <div data-role="content">                              
-                <form action="" method="post" data-ajax="false" >					
-                    <p><img src="images/<?php echo $candidateImg ?>.png" alt="<?php echo $candidateName ?>" /></p> 
+                <form action="" method="post" data-ajax="false" >	
+                    <p class="character-image"><img src="images/<?php echo $candidateImg ?>.png" alt="<?php echo $candidateName ?>" /></p>
+                    <?php echo "<p class='character-votes'>Votes: ". getCandidateVotes($candidateName) ."</p>"; ?>
+                    <br class="clear" />
 					<p class="character-info"><?php echo $characterInfo["$candidateIdName"] ?></p>
-					<p><strong>Votes: <?php echo getCandidateVotes($candidateName) ?></p>
+
                     <input type="hidden" class="candidateId" value="<?php echo $count ?>" />
                     <input type="submit" class="castvote" value="Vote for <?php echo $candidateName ?>" />
                 </form>

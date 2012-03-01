@@ -1,10 +1,18 @@
 <?php	
-	include('config/db.php');
+	$dir = getcwd();
+	
+	if(strstr($dir, 'scripts')){
+		include('../config/db.php');		
+	}
+	else{
+		include('config/db.php');
+	}
 
     //get all of the voters
     $c = $conn->query("select * from voters order by voter_id");          
     $c->setFetchMode(PDO::FETCH_OBJ);  
-        
+       
+	//print out a table of all the current voters, who they voted for and a delete button
 ?>
 	<p><input type="submit" value="Delete All Votes" id="deleteAll" /></p>
 	<table>
@@ -30,8 +38,10 @@
 				<td><?php echo $voter->voter_id; ?>  </td>
 				<td><?php echo $voter->name; ?> </td>
 				<td>
-					<input type="hidden" value="<?php echo $voter->voter_id; ?>" />
-					<input type="submit" value="Delete" class="deleteVote" /> 
+					<form class="deleteForm" action="" method="post" data-ajax="false">
+						<input type="hidden" value="<?php echo $voter->voter_id; ?>" />
+						<input type="submit" value="Delete" class="deleteVote" />
+					</form>
 				</td>
 			</tr>
 		<?php

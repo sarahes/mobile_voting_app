@@ -13,17 +13,26 @@
     <script>
 		$(document).ready(function() {
             $('.deleteVote').tap(function(e) {		
-                e.preventDefault();                
-                alert("woo!");
-				alert($(this).parent().parent().children('input[type=hidden]').val());
-                $.post('scripts/delete_vote.php', {   
-                    voterId : $(this).parent().parent().children('input[type=hidden]').val()	                                  			
-                }, 
-                function(data) {
-                   alert("This vote has been removed.");                                  
-                }, "json");				
+                e.preventDefault(); 
+				
+				$.post("scripts/delete_vote.php", { voterId : $(this).parent().parent().children('input[type=hidden]').val() },
+				function(data){
+					alert("This vote has been deleted"); 
+					location.reload(true);
+				});
                 
-            });	         
+            });	  
+
+			$('#deleteAll').tap(function(e) {		
+                e.preventDefault(); 
+				
+				$.post("scripts/delete_all_votes.php",
+				function(data){
+					alert("All votes have been deleted"); 
+					location.reload(true);
+				});
+                
+            });
         });   
     </script>
 </head>
@@ -33,8 +42,10 @@
       <div data-role="header">
         <h1>Administrative</h1>        
       </div>
-      <div data-role="content">       
-        <?php include_once 'scripts/get_voters.php'; ?>
+      <div data-role="content">
+		<div id="votersList">
+			<?php include 'scripts/get_voters.php'; ?>
+		</div>
       </div>
     </div>	
 </body>

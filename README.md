@@ -1,8 +1,1 @@
-# Project 2 - DIG4104 #
-
-Group Members
-------- 
-
-* Sarah Sheehan
-* Adam Boerema
-* Melinda Velasquez
+Mobile voting appliction using jQuery mobile. 

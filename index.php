@@ -2,14 +2,14 @@
 <html>
 <head>
 <title>DIG 4104c Project 2 - Adam Boerema - Sarah Sheehan - Melinda Velasquez</title>
-	<meta charset="utf-8" />
-  	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<link rel="stylesheet" href="css/themes/town.min.css" />
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile.structure-1.0.1.min.css" />
-	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
-	<link rel="stylesheet" href="css/styles.css" />
-	</head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">	
+    <link rel="stylesheet" href="css/themes/town.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile.structure-1.0.1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    </head>
     <script>
         $(document).ready(function() {
             var alreadyVoted = false;
@@ -74,7 +74,7 @@
       </div>
       <div data-role="content"> 
         <?php include_once 'includes/register.php' ?>
-		<p><a class="adminlink" href="admin" data-ajax="false">Admin Page</a> </p>
+        <p><a class="adminlink" href="admin" data-ajax="false">Admin Page</a> </p>
       </div>
     </div>
      <!-- Vote Page -->

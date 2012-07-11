@@ -7,13 +7,13 @@ ul{
 }
 li{margin-bottom: 20px;}
 table{
-	width:100%;
-	border-collapse: collapse;
+    width:100%;
+    border-collapse: collapse;
 }
 th{
-	background: #233437;
-	padding: 10px 5px;
-	text-align: left;
+    background: #233437;
+    padding: 10px 5px;
+    text-align: left;
 }
 tr.even{background: #6D1A27;}
 td{padding: 6px 10px;}
@@ -35,31 +35,31 @@ td{padding: 6px 10px;}
     margin-bottom: 20px;    
 } 
 .candidate{
-	float: left;
-	width: 75px;
-	margin-right: 20px;
+    float: left;
+    width: 75px;
+    margin-right: 20px;
 }
 .candidateCount{
-	display: inline-block;
-	width: 125px;
+    display: inline-block;
+    width: 125px;
 }
 .bar{
-	width: 300px;
-	display: inline-block;
+    width: 300px;
+    display: inline-block;
 }
 .graph {	
-	background: #25373A;	
-	color: #fff;
-	padding:10px 0;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-	border-top: 2px #306871 solid;
-	border-bottom:2px #306871 solid;
+    background: #25373A;	
+    color: #fff;
+    padding:10px 0;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    border-top: 2px #306871 solid;
+    border-bottom:2px #306871 solid;
 }
 .graph-percent{
-	margin: 0 0 0 8px;
+    margin: 0 0 0 8px;
 }
 .character-votes {
-	font-size:30px;
+    font-size:30px;
 }
 

@@ -1,8 +1,8 @@
 <?php
-	$voterId = $_POST["voterId"];   	
-	include_once("../config/db.php");	
-	
+    $voterId = $_POST["voterId"];   	
+    include_once("../config/db.php");	
+    
     //delete the voter 
-	$stmt = $conn->exec("delete from voters where voter_id = '$voterId'");
-	
+    $stmt = $conn->exec("delete from voters where voter_id = '$voterId'");
+    
 ?>	
